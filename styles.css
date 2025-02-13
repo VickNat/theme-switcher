@@ -1,0 +1,395 @@
+
+  /* Import a modern Google Font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+  /* Define default theme variables with a futuristic dark colour scheme and improved contrast */
+  :root {
+    --body-bg: #121212;
+    --body-color: #e0e0e0;
+    --accent-color: #00e6f6;
+    --card-bg: rgba(18, 18, 18, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --crazy-button-bg: #ff5722;
+    --crazy-button-text: #ffffff;
+  }
+
+  body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+  }
+
+  /* Global transition for all elements */
+  * {
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Dark Mode Theme */
+  body.dark-mode {
+    --body-bg: #0d0d0d; /* Much darker background */
+    --body-color: #f0f0f0;
+    --accent-color: #ff1493;  /* Hot pink accent */
+    --header-bg: linear-gradient(135deg, #ff1493, #000000); /* Hot pink to black gradient */
+    --card-bg: rgba(0, 0, 0, 0.95);
+  }
+
+  /* Blue Mode Theme */
+  body.blue-mode {
+    --body-bg: #e0f7fa;
+    --body-color: #006064;
+    --accent-color: #00acc1;
+    --header-bg: linear-gradient(135deg, #00acc1, #00838f);
+    --card-bg: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Barbershop Mode Theme */
+  body.barbershop-mode {
+    --body-bg: #f8f9fa;
+    --body-color: #212529;
+    --accent-color: #d32f2f;
+    --header-bg: repeating-linear-gradient(-45deg, #d32f2f, #d32f2f 20px, #ffffff 20px, #ffffff 40px);
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0,0,0,0.2);
+    background-color: var(--body-bg);
+    background-image: repeating-linear-gradient(135deg, #f8f9fa, #f8f9fa 25px, #e9ecef 25px, #e9ecef 50px);
+  }
+
+  /* Underwater Mode Theme */
+  body.underwater-mode {
+    --body-bg: #013a63;         /* Deep sea blue */
+    --body-color: #a2d2ff;       /* Light blue for contrast */
+    --accent-color: #00d1b2;     /* Turquoise accent */
+    --header-bg: linear-gradient(135deg, #005f73, #0a9396); /* Gradient evoking ocean depths */
+    --card-bg: rgba(1, 58, 99, 0.95);  /* Darker, watery card background */
+  }
+
+  .main-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+  }
+
+  /* Header styling */
+  header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: inherit;
+    filter: blur(80px);
+    z-index: 0;
+  }
+
+  header * {
+    position: relative;
+    z-index: 1;
+  }
+
+  header h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    margin-bottom: 12px;
+    /* Subtle lift animation for the default design */
+    animation: lift 3s ease-in-out infinite alternate;
+  }
+
+  header p {
+    font-size: 1.2em;
+    margin-bottom: 28px;
+  }
+
+  /* Theme controls styling */
+  .theme-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .theme-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Individual button colors */
+  .default-btn {
+    background-color: #00e6f6;
+    color: #fff;
+  }
+
+  dark-btn {
+    /* No changes here, dark-btn remains styled by its own rule */
+  }
+
+  .dark-btn {
+    background-color: #ff69b4;
+  }
+
+  .blue-btn {
+    background-color: #00acc1;
+  }
+
+  .barbershop-btn {
+    background-color: #d32f2f;
+    color: #fff;
+  }
+
+  /* Rainbow button styling for improved contrast */
+  .theme-btn#rainbowTheme {
+    background-color: #ff4081;
+    color: #fff;
+    border: 2px solid #ffffff;
+  }
+
+  /* Underwater button styling for improved contrast */
+  .theme-btn#underwaterMode {
+    background-color: #00d1b2;
+    color: #fff;
+    border: 2px solid #ffffff;
+  }
+
+  /* Removed mode-specific overrides for the default button to keep its color consistent across all modes */
+
+  /* New styling for Animation Controls and Crazy Animations button */
+  .animation-controls {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .crazy-animation-btn {
+    padding: 10px 20px;
+    border: 2px dashed #ff5722;
+    background-color: #333;
+    color: #ff5722;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+
+  .crazy-animation-btn:hover {
+    background-color: #ff5722;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .theme-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  /* Card styling */
+  .card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .card h2 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.6em;
+  }
+
+  .card p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+
+  /* Form styling */
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+
+  form input[type="text"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 230, 246, 0.2);
+  }
+
+  form button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    opacity: 0.85;
+  }
+
+  /* Output styling */
+  #htmlOutput {
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 6px;
+  }
+
+  /* CSS Section styling */
+  #cssText {
+    font-size: 1.2em;
+    color: #0066cc;
+    position: relative;
+  }
+
+  #cssText::after {
+    content: " (Styled by CSS)";
+    color: #ff6600;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  .animation-demo {
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animation-demo:hover, .animation-demo:focus {
+    transform: translateY(-10px) scale(1.1);
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 230, 246, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 230, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 230, 246, 0); }
+  }
+
+  /* Footer styling */
+  footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  /* Crazy Animations */
+  @keyframes crazySpin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(-20deg); }
+    75% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @keyframes crazyBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Lift animation for header h1 in default mode */
+  @keyframes lift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+  }
+
+  /* When crazy animations are enabled, header h1 spins and cards bounce */
+  .main-container.crazy header h1 {
+    animation: crazySpin 2s infinite;
+  }
+
+  .main-container.crazy .card {
+    animation: crazyBounce 3s infinite;
+  }
+
+  /* Floating Emoji Animations for Crazy Mode */
+  .floating-emoji {
+    position: fixed;
+    pointer-events: none;
+    font-size: 2em;
+    will-change: transform, opacity;
+    animation: floatWobble 5s linear forwards;
+  }
+
+  @keyframes floatWobble {
+    0% {
+      transform: translateX(var(--start-x)) translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(var(--mid-x)) translateY(50vh) rotate(15deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(var(--end-x)) translateY(-10vh) rotate(0deg);
+      opacity: 0;
+    }
+  }
+
+  /* Stationary Emoji Styling with Hover Wobble Effect */
+  .stationary-emoji {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .stationary-emoji.wobble {
+    animation: wobble 0.6s infinite;
+  }
+
+  @keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
