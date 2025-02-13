@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theme-switcher</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+  <div class="main-container">
+    <header>
+      <!-- Theme Controls -->
+      <div class="theme-controls">
+        <button class="theme-btn default-btn" id="defaultTheme">Default</button>
+        <button class="theme-btn dark-btn" id="darkTheme">Dark & Pink Mode</button>
+        <button class="theme-btn blue-btn" id="blueTheme">Blue Mode</button>
+        <button class="theme-btn barbershop-btn" id="barbershopMode">Barbershop Mode</button>
+        <!-- Rainbow Mode button is added dynamically via JavaScript -->
+      </div>
+      <!-- Separate Animation Controls for Crazy Animations -->
+      <div class="animation-controls">
+        <button class="crazy-animation-btn" id="crazyAnimationBtn">Crazy Animations</button>
+      </div>
+      <h1>Interactive Demo 2.0 🚀</h1>
+      <p>An enhanced and modern UI experience using HTML, CSS, and JavaScript ✨</p>
+    </header>
+
+    <!-- HTML Section -->
+    <section class="card" id="htmlSection">
+      <h2>HTML Section</h2>
+      <p>This section is built with HTML. Please fill in the form below:</p>
+      <form id="demoForm">
+        <input type="text" id="nameInput" placeholder="Enter your name" autocomplete="off" />
+        <button type="submit">Submit</button>
+      </form>
+      <div id="htmlOutput"></div>
+    </section>
+
+    <!-- CSS Section -->
+    <section class="card" id="cssSection">
+      <h2>CSS Magic</h2>
+      <p id="cssText">This text is styled by CSS to look elegant.</p>
+      <div class="animation-demo">Hover or click me!</div>
+    </section>
+
+    <!-- JavaScript Section -->
+    <section class="card" id="jsSection">
+      <h2>JavaScript Interaction</h2>
+      <p id="jsText">Waiting for JavaScript...</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Interactive Demo. All Rights Reserved.</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+  </body>
+  </html>
